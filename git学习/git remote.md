@@ -1,34 +1,42 @@
-1. git remote add
-2. git remote -v
-3. git remote show
-4. git remote remove
-5. git remote push
-6. git remote rename
-8. git remote set-url
-## 1. 添加远程仓库
+### 1. `git remote`
+1. `git remote add`
+2. `git remote -v`
+3. `git remote show`
+4. `git remote remove`
+5. `git remote push`
+6. `git remote rename`
+8. `git remote set-url`
+
+> 更多命令请查看`man git-remote`
+
+#### 1.1 添加远程仓库
 首先，我们需要添加远程仓库的地址
 ```shell
 git remote add name url 
 ```
+
 例如
 ```shell
 git remote add pb https://github.com/paulboone/tic.git
 ```
 
-## 2. 查看远程仓库
+#### 1.2 查看远程仓库
 查看远程仓库使用如下命令
 ```shell
 git remote -v
 ```
-上面的命令会显示所有的远程仓库和url，如下
+
+上面的命令会显示所有的`远程仓库`和`url`，如下
 ```shell
 gitea_blog	http://101.34.170.88:3000/LinuxTerminator/blog.git (fetch)
 gitea_blog	http://101.34.170.88:3000/LinuxTerminator/blog.git (push)
 ```
+
 但是，我们无法看到仓库的详细信息，不过，我们可以使用如下命令查看
 ```shell
 git remote show name
 ```
+
 会显示如下信息
 ```shell
 * remote github_blog
@@ -43,38 +51,20 @@ git remote show name
     master pushes to master (local out of date)
 ```
 
-## 3. 删除远程仓库
+#### 1.3 删除远程仓库
 删除远程仓库
 ```shell
 git remote remove name
 ```
 
-## 4. 修改远程仓库
+#### 1.4 修改远程仓库
 重命名
 ```shell
 git remote rename old-name new-name
 ```
+
 修改远程仓库的url
 ```shell
 git remote origin set-url url
 ```
 
-## 5. push
-我们写好的代码是需要推送到远程仓库的
-> 这里是把本地的master分支推送到远程的master分支
-
-这里其实是一种简写，完整的写法是这样的
-`git push <远程主机> <本地分支>:<远程分支>`
-`当远程分支被省略，则推送到和本地分支同名的远程分支，如果没有则创建`
-这里推送本地master分支到远程master分支
-```shell
-git push origin master
-```
-远程仓库有时是有分支的，我们需要把代码推送到指定分支
-```shell
-git push origin master:dev
-或者
-git push origin dev:master
-```
-参考：[[分支]]、[[提交]]
-更多操作:[git push](https://chinese.freecodecamp.org/news/git-push-to-remote-branch-how-to-push-a-local-branch-to-origin/)

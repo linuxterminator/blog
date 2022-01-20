@@ -7,7 +7,7 @@
 [[github action]]
 [[Travis Ci]]
 ## git学习
-[[远程仓库]]
+[[git remote]]
 [[分支]]
 [[提交]]
 [[设置]]
